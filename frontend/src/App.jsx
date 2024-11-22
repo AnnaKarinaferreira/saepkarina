@@ -31,7 +31,7 @@ function App() {
 
   const salvarTarefa = async () => {
     try {
-      await fetch('http://localhost:3000/tarefas', {
+      await fetch('http://localhost:3000/tarefas:1', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(novaTarefa),
@@ -46,7 +46,7 @@ function App() {
 
   const salvarUsuario = async () => {
     try {
-      await fetch('http://localhost:5432/usuario', {
+      await fetch('http://localhost:5432/usuario:1', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(novoUsuario),
@@ -61,7 +61,7 @@ function App() {
 
   const buscarTarefas = async () => {
     try {
-      const response = await fetch('http://localhost:3000/tarefas');
+      const response = await fetch('http://localhost:3000/tarefas:1');
       const data = await response.json();
       setTarefas(data);
     } catch (error) {
@@ -71,7 +71,7 @@ function App() {
 
   const buscarusuario = async () => {
     try {
-      const response = await fetch('http://localhost:3000/usuario');
+      const response = await fetch('http://localhost:3000/usuario:1');
       const data = await response.json();
       setusuario(data);
     } catch (error) {
